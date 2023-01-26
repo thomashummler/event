@@ -1047,6 +1047,42 @@ option:checked {
   padding-bottom: 100px;
 }
 
+.promotion_option_container {
+  width: 100%;
+  height:  auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--grey-color);
+  justify-content: space-between;
+  border-radius: 4px;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.promotion_option {
+  margin-bottom: 20px;;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  background-color: var(--white-color);
+  border-radius: 4px;
+  padding: 20px;
+  align-content:space-between;
+}
+
+.promotion_option_text {
+  height: 400px;
+}
+
+.promotion_option_text p{
+  padding-top: 20px;
+}
+
+.promotion_option a {
+  color: var(--white-color);
+  }
+
 .promotion h2 {
   padding-bottom: 40px;
   color: var(--dark-color);
@@ -1071,7 +1107,7 @@ option:checked {
   font-size: 20px;
   background-color: var(--aqua-color);
   transition: 0.2s;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .promotion-form {
@@ -1093,7 +1129,21 @@ option:checked {
     color: var(--white-color);
     }
   
+/**************  SUCCESSFULLY CREATED/PROMOTED **************/ 
 
+.successfully-promoted-container {
+  padding-top: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: var(--grey-color);
+}
+
+.successfully-created-container {
+  padding-top: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: var(--grey-color);
+}
 
 
 
@@ -1134,8 +1184,7 @@ option:checked {
 
 
 
-  /*********** DATENSCHUTZERKLÄRUNG *******/ 
-
+  /*********** ERROR *******/ 
 
 
 /*********** FOOTER ****************/
@@ -1178,6 +1227,9 @@ footer div:hover {
 .datenschutzerklärung a:active {
   color: var(--aqua-color) !important;
 }
+
+
+
 
 
 
@@ -1283,9 +1335,6 @@ footer div:hover {
     border-radius: 4px;
   }
 
-  .promotion-container button{
-    width: 400px;
-  }
 
     
 
@@ -1472,6 +1521,8 @@ footer div:hover {
     padding-right: 25%;
   }
 
+ 
+
 }
 
 
@@ -1513,11 +1564,17 @@ footer div:hover {
 }
 
 
-@media (min-width: 1753px) {
-
+.promotion_option_container {
+  flex-direction: row;
 }
 
+.promotion_option {
+  max-width: 33%;
+}
 
+.promote-button {
+  align-self: center;
+}
 
 
 }

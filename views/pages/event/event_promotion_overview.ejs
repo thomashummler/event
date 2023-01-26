@@ -1,42 +1,72 @@
 <%- exposeLocalsToBrowser() %>
-<div class="promotion">
-  <h2>Promoten Sie jetzt ganz einfach Ihr Event!</h2>
-  <div class="promotion-container">
-    <div>
-      Auf dieser Seite können Sie ihr ausgewähltes Event mit einem einfachen Klick promoten. 
-      <br/>
-      <br/>
-      Aber was ist denn genau mit promoten gemeint?<br/>
-      <br/>
-      Je nachdem welche Promotionsstufe sie auswählen, werden von Ihnen erstelle Events auf der Übersichtsseite weiter oben angezeigt!<br>
-      Je höher nun also die Promotionstufe ihres Events ist, desto stärker wird ihr Event auch wahrgenommen. <br>
-      Denn sind wir mal ehrlich, wer scrollt denn schon bei einer Website immer ganz nach unten? 
-      <br/>
-      <br/>
-      Dabei unterscheiden sich die Promotionsstufen nur von ihrem Preis, je höher die Stufe, desto mehr kostet die Promotion. 
-    </div>
-    <br/>
-    <br/>
-    <br/>
-    <div class="eventId">
-      Ihre aktuelle Promotionsstufe für dieses Event ist: <%= event.promotionStatus %>
-    </div>
-    <br/>
-    <br/>
-    Wählen Sie folgend einfach Ihre gewünschte Promotionsstufe aus:
-    <div id="promote">
+  <div class="promotion">
+    <h2>Promoten Sie jetzt ganz einfach Ihr Event!</h2>
+    <div class="promotion-container">
       <div>
-        <form class="promotion-form">
-          <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-          <select type="text" name="promotionStatus" v-model="Promotion" value="4">
-            <option value=0>0</option>
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-          </select>
+        Auf dieser Seite können Sie ihr ausgewähltes Event mit einem einfachen Klick promoten.
+        <br />
+        <br />
+        Aber was ist denn genau mit promoten gemeint?<br />
+        <br />
+        Je nachdem welche Promotionsstufe sie auswählen, werden von Ihnen erstelle Events auf der Übersichtsseite weiter
+        oben angezeigt!<br>
+        Je höher nun also die Promotionstufe ihres Events ist, desto stärker wird ihr Event auch wahrgenommen. <br>
+        Denn sind wir mal ehrlich, wer scrollt denn schon bei einer Website immer ganz nach unten?
+        <br />
+        <br />
+        Dabei unterscheiden sich die Promotionsstufen nur von ihrem Preis, je höher die Stufe, desto mehr kostet die
+        Promotion.
       </div>
-      <button type="submit" class="promote-button" @click="promote(<%= event.id %>)"> <a href="/event/own_events">Jetzt Promotions-Level {{Promotion}} auswählen</a></button>
+      <br />
+      <br />
+      <br />
+      <div class="eventId">
+        Ihre aktuelle Promotionsstufe für dieses Event ist: <%= event.promotionStatus %>
+      </div>
+      <br />
+      <br />
+      Wählen Sie folgend einfach Ihre gewünschte Promotionsstufe aus:
+      <div id="promote">
+        <div>
+          <form class="promotion-form">
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+            <select type="text" name="promotionStatus" v-model="Promotion" value="4">
+              <option value=0>0</option>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+            </select>
+        </div>
+        <button type="submit" class="promote-button" @click="promote(<%= event.id %>)"> <a
+            href="/event/own_events">Jetzt Promotions-Level {{Promotion}} auswählen</a></button>
+      </div>
+      <div class="promotion_option_container">
+        <div class="promotion_option">
+          <div class="promotion_option_text">
+            <h3>Promotionsstufe 1</h3>
+            <p>Ihr Event wird in seiner Kategorie ganz oben angezeigt.</p>
+          </div>
+          <button type="submit" class="promote-button" @click="promote(<%= event.id %>)"> <a
+              href="/event/own_events">Jetzt Promotions-Level {{Promotion}} auswählen</a></button>
+        </div>
+        <div class="promotion_option">
+          <div class="promotion_option_text">
+            <h3>Promotionsstufe 2</h3>
+            <p>Ihr Event wird in seiner Kategorie und für seine Stadt ganz oben angezeigt.</p>
+          </div>
+          <button type="submit" class="promote-button" @click="promote(<%= event.id %>)"> <a
+              href="/event/own_events">Jetzt Promotions-Level {{Promotion}} auswählen</a></button>
+        </div>
+        <div class="promotion_option">
+          <div class="promotion_option_text">
+            <h3>Promotionsstufe 3</h3>
+            <p>Ihr Event wird auf der Gesamtübersicht aller Events ganz oben angezeigt.</p>
+          </div>
+          <button type="submit" class="promote-button" @click="promote(<%= event.id %>)"> <a
+              href="/event/own_events">Jetzt Promotions-Level {{Promotion}} auswählen</a></button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
- 
+
+  <%- exposeLocalsToBrowser() %>
