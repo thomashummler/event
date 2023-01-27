@@ -1,4 +1,273 @@
-# evently
+# Dokumentation unserer App Evently
+<br>
+<br>
+<br>
+
+> <br>
+> <br>
+> 
+> ## 1. Spezifikation und Design
+>
+> <br>
+> <br>
+> <h3><b> Projektziele von Evently  </b></h3>
+> 
+> <br>
+> <br>
+> 
+> - Damit User nicht lange rumsuchen müssen und dann ihre Geduld verlieren, sollen Events einfach auffindbar und aufgegliedert sein.
+> - Stark unübersichtlich Websites schrecken mögliche User schnell ab, deswegen soll unsere Website schlicht gehalten werden.
+> - Damit auch ein wirtschaftlicher Vorteil durch die Website entsteht, sollen Events durch einen Bezahlvorgang durch den Urheber des Events promotet werden können.
+> - Auf unser Event Webseite kann man private aber auch öffentliche Events erstellen oder einsehen und diese mit seinen Freunden teilen .
+> 
+> <br>
+> <br>
+> <br>
+> <br>
+> 
+> <h3><b> Personas </b></h3>
+>
+> <br>
+>
+> ![Persona1](/assets/images/doku/persona1.png "Persona 1")
+>
+> <br>
+> 
+> ![Persona2](/assets/images/doku/persona3.png "Persona 1")
+>
+> <br>
+>
+> ![Persona3](/assets/images/doku/persona2.png "Persona 1")
+>
+> <br>
+> <br>
+> <br>
+> <br>
+>
+> <h3><b> Kontextdiagramm </b></h3>
+>
+> <br>
+>
+> ![Kontextdiagramm](/assets/images/doku/kontextdiagramm.png "Persona 1")
+> 
+> <br>
+> <br>
+> <br>
+> <br>
+> 
+> <h3><b>Akteure</b></h3>
+> 
+> <br>
+> 
+> Besucher
+>
+>
+>> Besucher können Veranstaltungen ansehen und sich  über bevorstehende  Veranstaltungen  informieren.
+>
+> <br>
+> Registrierte Nutzer
+>
+> 
+>> Registrierte Nutzer können Veranstaltungen erstellen und Leute inladen. Zudem is es Ihnen möglich Ihre Veranstaltung zu bewerben.
+>
+> <br>
+> Admins
+>
+> 
+> 
+>> Haben weitreichende Befugnisse auf der Website und können alle Veranstaltungen bearbeiten und Fehler korrigieren.
+>
+> <br>
+> <br>
+> <br>
+> <br>
+>
+> 
+> <h3><b> Use-Case-Diagramm </b></h3>
+>
+> <br>
+>
+> ![Use-Case-Diagramm](/assets/images/doku/ucdiagramm.png "Use-Case-Diagramm")
+>
+> <br>
+> <br>
+> <br>
+> <br>
+>
+> <h3><b> Use-Case-Spezifikationen </b></h3>
+>
+> <br>
+>
+> 1. ![Persona1](/assets/images/doku/ue1.png "Persona 1")
+>
+> <br>
+> 
+> 2. ![Persona2](/assets/images/doku/ue2.png "Persona 1")
+>
+> <br>
+>
+> 3. ![Persona3](/assets/images/doku/ue3.png "Persona 1")
+> 
+> <br>
+>
+> 4. ![Persona3](/assets/images/doku/ue4.png "Persona 1")
+> 
+> <br>
+> <br>
+> <br>
+> <br>
+>
+> <h3> <b> Design </b></h3>
+> 
+> <br>
+> <br>
+>
+> Style Tile 
+> 
+> <br>
+> 
+> ![styletile](/assets/images/doku/styletile.png "Persona 1")
+>
+> <br>
+> 
+> Sitemap
+> 
+> ![sitemap](/assets/images/doku/sitemap.png "Sitemap")
+>
+> <br>
+> <br>
+> <br>
+> 
+> UC Info
+> 
+> ![UC Info](/assets/images/doku/ucinfo.png "UC Info")
+>
+> UC CRUD
+> 
+> ![UC CRUD](/assets/images/doku/uccrud.png "UC CRUD")
+>
+> > UC Transaction
+> 
+> ![UC Transaction](/assets/images/doku/uctransaction.png "UC Transaction")
+>
+> <br>
+> <br>
+>
+>ER-Diagramm
+>
+> ![ER-Diagramm](/assets/images/doku/ErDiagramm.png "ER-Diagramm")
+> <br>
+> <br>
+> <br>
+> <br>
+
+
+
+<br>
+<br>
+<br>
+
+> <br>
+> <br>
+> 
+>  ## 2. Implementierung 
+> 
+
+
+<br>
+<br>
+<br>
+
+> <br>
+> <br>
+> 
+>  ## 3. Bereitstellung 
+>
+> 
+
+<br>
+<br>
+<br>
+
+> <br>
+> <br>
+> 
+> ## 4. Optimierung 
+>
+> <br>
+> <br>
+> <br>
+> <br>
+> 
+> <h3>PageSpeed Insights vor der Optimierung</h3>
+>
+> <br>
+> <br>
+>
+> > <br> Mobile <br> <br> ![Mobile](/assets/images/doku/speed_mobile_before.png "Mobile")
+>
+> > <br> Desktop <br> <br> ![Mobile](/assets/images/doku/speed_desktop_before.png "Desktop")
+>
+> <br>
+> <br>
+>
+> <h3>Vorgenommene Anpassungen</h3>
+>
+> <br>
+> <br>
+>
+> > 
+>
+>
+> <br>
+> <br>
+>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 a [Sails v1](https://sailsjs.com) application
 
