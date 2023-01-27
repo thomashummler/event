@@ -128,6 +128,7 @@ header {
 }
 
 .header-searchbar {
+  z-index: 99;
   display: flex;
   justify-content: flex-start;
   width: 50%;
@@ -841,7 +842,6 @@ button:focus {
   background-color: var(--aqua-color);
   border: none;
   color: var(--dark-color);
-  width: 200px;
 }
 
 .btn-secondary {
@@ -1177,6 +1177,7 @@ option:checked {
   }
 
   .container-impressum h2{
+    font-size: 22px !important;
     padding-bottom: 50px;
   }
 
@@ -1217,6 +1218,7 @@ footer div:hover {
 .datenschutzerklärung a {
   color: var(--white-color) !important;
 }
+
 
 .impressum a:active {
   color: var(--aqua-color) !important;
@@ -1426,7 +1428,9 @@ footer div:hover {
     padding-right: 15%;
   }
 
-
+  .container-impressum h2{
+    font-size: 32px !important;
+  }
 
 
 }
