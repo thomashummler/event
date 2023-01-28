@@ -60,16 +60,11 @@ module.exports = {
       })
   },
 
-
-
-
   createWithImage: async function (req, res) {
-  
-
     let params = {
       dirname: require("path").resolve(
         sails.config.appPath,
-        "assets/images/events/"
+        ".tmp/public/images/events/"
       ),
     };
 
