@@ -216,8 +216,15 @@
 > <br>
 > <br>
 >
-> > 
+> > <b> Performance </b> <br> Da vorallem die Größe und die Dimensionierung der Bilder auf unserer Seite, als größter Problempunkt von PageSpeed Insights augelistet wurde, haben wir uns vorallem darauf fokussiert. Bilder in moderaten Formaten bereitstellen und Bilder richtig dimesnionieren, waren die zwei ersten Empfehlungen. Deswegen wurden alle zu großen Bilder unserer Seite weboptimiert in ein entspechendes Format umgewandelt und ersetzt.  Außerdem wurde fir Barrierefreiheit verbessert, indem Schaltflächen einen für Screenreader zugänglichen Namen bekommen haben, sowie Alt-Attribute zu Bildelementen hinzugefügt wurden. 
 >
+> <br>
+>
+> > <b> SEO </b> <br> Unser Fokus lag dabei auf den Suchbegriffen "Eventplaner", "Event erstellen" und "Event finden", welche wir versucht haben so gut wie möglich auf unserer Seite unterzubringen. Laut PageSpeed Insights sollte wir außerdem für besseres  SEO, noch eine  Metabeschreibung hinzufügen und Bildelemente mit alt-Attributen versehen, was  ja auch schon  im letzten Punkt angesprochen wurde. Desweiteren wurden ein paar Links noch so angepasst, dass sie von Google gecrawlt werden können, was zuvor auch nicht möglich war. 
+>
+> <br>
+>
+> > <b> Sicherheit </b> <br> Hier wurden keine großen Anpassungen vorgenommen, da dieser Score laut PageSpeed Insights schon sehr gut war und die Best Practices weitgehend eingehalten wurden. 
 >
 > <br>
 > <br>

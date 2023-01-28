@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-
+    <meta name="description" content="Evently ist ein Eventmanager, welcher Ihnen hilft, einfach Veranstaltungen zu erstellen und sie mit Freunden zu teilen. Außerdem können die Events durch Promotion, mehr Aufmerksamkeit bei allen Usern bekommen, was Ihnen dabei hilft Ihr Event besser zu machen als zuvor.">
     <link rel="icon" type="image/x-icon" href="/images/evently.png">
     <script src="https://kit.fontawesome.com/85907b9609.js" crossorigin="anonymous"></script>
 
@@ -91,17 +91,17 @@
     <div purpose="page-wrap">
         <div class="header-container">
           <div class = "logo-header-container">
-           <a href="/"> <img class="logo-header" src="/images/evently.png"></a>
+           <a href="/"> <img class="logo-header" src="/images/evently.png" alt="Logo Evently"></a>
           </div>
           <div class="header-searchbar">
             <form action = "/event" class="search-box">
-              <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
+              <button class="btn-search" type="submit" aria-label="Suche"><i class="fas fa-search"></i></button>
               <input type="text" class="input-search" placeholder="Suchen.." name="name" >
             </form>
           </div>
           <div class="header-userinfo">
             <div class="dropdown">
-              <button class="dropbtn"></button>
+              <button class="dropbtn" aria-label="Profil Button"></button>
               <div class="dropdown-content">
               <% if(me) { %>
               <a href="/logout">Ausloggen</a>
