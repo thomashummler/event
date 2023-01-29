@@ -171,15 +171,70 @@
 > <br>
 > 
 >  ## 2. Implementierung 
-> 
-
-
+>  UC INFO : <br>
+   Dafür haben wir eine Homepage und eine Welcome Page erstellt. <br>
+   Auf der Homepage landet man immer wenn man die Seite zum ersten mal aufruft, <br>
+   und man findet dort eine Beschreibung was man mit usnerer Seite alles machen kann <br>
+   Außerdem sind dort alle Links zu den Funktionen auf unserer Seite vorhanden. <br>
+   Für alle Aktionen außer dem Suchen und näherem Anschauen von Events, <br>
+   ist allerdings eine Anmeldung erforderlich bzw Registrierung erforderlich. <br>
+   Nach der Anmeldung landet man auf der Welcome Page wo noch weitere Informationen zur Bedienung <br>
+   unserer Website vorhanden sind. 
 <br>
 <br>
 <br>
-
+    UC Search: Auf unserer Seite gibt es 3 Suchfunktionen <br>
+    Die erstere Suche befindet sich im Header unserer Seite. <br>
+    Sie bietet die Möglichkeit alle erstellten Events nach einem bestimmten Namen, <br>
+    bzw nach dem Bestandteil eines Namens zu suchen. <br>
+    Die Suche ist über das von MVC Pattern geregelt und führt die find Methode in unserem Eventcontroller aus. <br>
+    Allerdings wird über die find Methode auch alle Events gefunden, aber nur wenn im req body der Parameter <br>
+    name mit einer länger > 0 dabei ist, wird aus allen Events nur die angezeigt mit dem passenden Namen. <br>
+    Die 2te Suche funtkioniert über das Category Attribut unserer Events. <br>
+    Diese kann betätigt werden in dem man das Dropdown-Menü in unserem links oben in unserem Header öffnet. <br>
+    Dort kann man durch die Auswahl einer Kategorie ausschließlich die Events auffinden, die zu dieser Kategorie gehören. <br>
+    Umgesetzt wurde die Suche auch mit dem MVC Pattern und der Methode findEventsByCategory aus dem EventController <br>
+    Die dritte Suche ist nicht als Suche sondern als Filter gedacht. <br>
+    Sie befindet sich auf der eventsOverview Seite und soll helfen Events noch weiter zu filtern.<br>
+    Sie wurde ebenfalls mit dem MVC Pattern implementiert und funktioniert über die Methode searchCategoryStadt <br>
+    aus dem EventController. <br>
+    Bei allen Suchoptionen wurden auch auf die Promotionsstufe geachtet und die Events nach dessen Vorgaben sortiert. <br>
+    Mehr dazu aber unter UC Transaction
+<br>
+<br>
+<br>
+    UC CRUD: Die Pflege von Stammdaten wurde bei uns nur für das Event Model gepflegt.    <br>
+    Die Create , Read , Update und Delete Funktionen wurden mit dem MVC Pattern umgesetzt <br>
+   Bspw eine Category, ob das Event privat sein soll(dann wird es keinen anderen Usern angezeigt) oder auch ein Bild <br>
+   Read von Events wird über die Suche und die find Funktion im Controller umgesetzt <br>
+   Update/Delete werden über die gleichnamigen Methoden im EventController umgesetzt <br>
+   Ausgelöst werden können diese von Usern die das Event erstellt haben oder Administratoren <br>
+   Anderen Usern wird die Möglichkeit gar nicht geboten <br>
+   Auslösen kann man die Methoden auf Event Detail Page (show_event,show_eventDetail_without_buttons), auf die man über die Overview Events Seite kommt. <br>
+   
 > <br>
 > <br>
+  <br>
+
+  UC TRANSACTION : Unsere erste Transaction ist das Promoten von selbsterstellten Events. <br>
+  Dies ist möglich in dem man über das HOME Dropdown, oben Rechts im Header auf unserer Seite auf eigene Events klickt und bei einem Event auf Jetzt Promoten besätigt.  <br>
+  Dann gelangt man auf die event_promotion_overview Seite.<br>
+    Je nachdem welche Promotionart man seinem Event zuordnet, wird das Event in unterschiedlichsten Fällen weiter oben bei deroverview_Events Seite angezeigt.<br>
+  1 Promotionsstufe: Das Event wird weiter oben angezeigt wenn man nur einen Kategoriefilter aktiviert hat.<br>
+  2 Promotionsstufe: Das Event wird weiter oben angezeigt wenn man nur einen Kategoriefilter und Stadt aktiviert hat.<br>
+  3 Promotionsstufe: Unter allen ungefilterten Events wird das Event weiter oben angezeigt.<br>
+  Nach Auswahl eines Filters wird auf eine Besätigungsseite weitergeleitet.<br>
+  Die Funktion wurde mit Vue und Ajax umgesetzt.<br>
+
+
+    Unsere 2te UC Transaction ist das Erstellen von Events unserer Seite über einen mehrteiligen Bestellvorgang <br>
+    Im rechten Dropwdown im Header, werden angemeldeten Usern und Administratoren ermöglicht, <br>
+    eigene Events zu erstellen. <br>
+    Dazu klickt man auf Events erstellen und landet dann create_Events Seite <br>
+    Dies ist die erste Seite für den zweilteiligen Erstellungsvorgang. <br>
+    Hier können erstmal Basic Informationen über das Event angegeben werden wie Adresse, Datum, Name, Beschreibung des Events <br>
+    Danach wird man auf eine 2te Create Seite ( overview_createEvents) weitergeleitet, während dessen werden die eingegeben Seiten über Sessions zwischengespeichert. <br>
+   Auf dieser Seite gibt es dann nochmal eine Übersicht über die eingegeben Informationen, als auch die Möglichkeit noch weitere Informationen seinem Event hinzuzufügen. <br>
 > 
 >  ## 3. Bereitstellung 
 >
@@ -188,6 +243,9 @@
 <br>
 <br>
 <br>
+   User 1 =  Email: "admin@example.com"  pw: "abc123" <br>
+   User 2 = Email: "maurice.mustermann@example.com"   pw:"evently" <br>
+   User 3 = Email:"markus.maier@example.com"   pw:"evently2"
 
 > <br>
 > <br>

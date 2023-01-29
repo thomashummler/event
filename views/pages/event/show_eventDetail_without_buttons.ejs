@@ -49,6 +49,12 @@
           <div class="col-6">Kategorie:</div>
           <div class="col-6"><%=event.category %></div>
         </div>
+        <div class="row">
+          <div class="col-6"><b>Promotion-Status:</b></div>
+          <div class="col-6">
+            <%=event.promotionStatus %>
+          </div>
+        </div>
 
         <% if(event.image) { %>
           <div class="overviewImg">

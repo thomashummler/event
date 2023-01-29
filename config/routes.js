@@ -32,9 +32,9 @@ module.exports.routes = {
   'GET /event/:id': { controller: 'EventController', action: 'findOne' },
   'GET /event/promote/:id': { controller: 'EventController', action: 'findPromotionPage' },
   'GET /event/:id/edit': { controller: 'EventController', action: 'editOne' },
-  'POST /event/:id/promote': { controller: 'EventController', action: 'updatePromotion' },
   'POST /event/:id/update': { controller: 'EventController', action: 'updateOne' },
   'GET /event/:id/destroy': { controller: 'EventController', action: 'destroyOne' },
+  'GET /events/searchCS' :{controller: 'EventController', action: 'searchCategoryStadt'},
 
 
   'GET /faq': { action: 'view-faq' },

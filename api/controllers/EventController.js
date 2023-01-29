@@ -9,15 +9,61 @@ const redactPasswords = require("sails-mysql/lib/private/redact-passwords");
 const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
-  updatePromotion: async function (req, res) {
-    let event = await Event.updateOne({ id: req.params.id }).set(req.body);
-    events = await Event.find({
-      owner: {
-        contains: req.me.id,
-      },
-    });
-    events.sort((x, y) => y.promotionStatus - x.promotionStatus);
-    res.view("pages/event/overview_own_events", { events: events });
+  searchCategoryStadt: async function (req, res) {
+    let events;
+    let params = req.allParams();
+    
+    if (params.category == "empty") {
+      params.category = null;
+    }
+
+    if (params.stadt != "" && params.category != null) {
+      events = await Event.find({
+        category: params.category,
+        stadt: {
+          contains: params.stadt,
+        },
+        private: "false",
+      });
+      let filteredEvents = [];
+      let notFilteredEvents = [];
+      for (var i = 0; i < events.length; i++) {
+        if (events[i].promotionStatus == 2) {
+          filteredEvents.push(events[i]);
+        } else {
+          notFilteredEvents.push(events[i]);
+        }
+      }
+      events = filteredEvents.concat(notFilteredEvents);
+    }
+
+    if (params.stadt == "" && params.category != null) {
+      events = await Event.find({
+        category: params.category,
+        private: "false",
+      });
+      let promoEvents = [];
+      let noPromoEvents = [];
+      for (var i = 0; i < events.length; i++) {
+        if (events[i].promotionStatus == 1) {
+          promoEvents.push(events[i]);
+        } else {
+          noPromoEvents.push(events[i]);
+        }
+      }
+      events = promoEvents.concat(noPromoEvents);
+    }
+
+    if (params.category == null && params.stadt != "") {
+      events = await Event.find({
+        stadt: {
+          contains: params.stadt,
+        },
+        private: "false",
+      });
+    }
+
+    res.view("pages/event/overview_events", { events: events });
   },
 
   findEventsByCategory: async function (req, res) {
@@ -28,7 +74,17 @@ module.exports = {
       private: "false",
     });
     events;
-    events.sort((x, y) => y.promotionStatus - x.promotionStatus);
+    let promoEvents = [];
+    let noPromoEvents = [];
+    console.log(events.length);
+    for (var i = 0; i < events.length; i++) {
+      if (events[i].promotionStatus == 1) {
+        promoEvents.push(events[i]);
+      } else {
+        noPromoEvents.push(events[i]);
+      }
+    }
+    events = promoEvents.concat(noPromoEvents);
     res.view("pages/event/overview_events", { events: events });
   },
 
@@ -45,7 +101,6 @@ module.exports = {
   },
 
   create: async function (req, res) {
-
     sails.log.debug("Create Event....")
     req.session.name = req.body.name;
     req.session.beschreibung = req.body.beschreibung;
@@ -54,10 +109,10 @@ module.exports = {
     req.session.plz = req.body.plz;
     req.session.hausnummer = req.body.hausnummer;
     req.session.date = req.body.date;
-      res.view('pages/event/overview_createEvents', {
-        eventname: req.param("name"), eventbeschreibung: req.param("beschreibung"),
-        eventstadt: req.param("stadt"), eventhausnummer: req.param("hausnummer"), eventstraße: req.param("stadt"), eventplz: req.param("plz"), eventdate: req.param("date")
-      })
+    res.view('pages/event/overview_createEvents', {
+      eventname: req.param("name"), eventbeschreibung: req.param("beschreibung"),
+      eventstadt: req.param("stadt"), eventhausnummer: req.param("hausnummer"), eventstraße: req.param("stadt"), eventplz: req.param("plz"), eventdate: req.param("date")
+    })
   },
 
   createWithImage: async function (req, res) {
@@ -82,13 +137,13 @@ module.exports = {
       } else {
         privat = false;
       }
-      let plz= req.session.plz;
-      let hausnr= req.session.hausnummer;
-      if(plz==""){
-          plz=null;
+      let plz = req.session.plz;
+      let hausnr = req.session.hausnummer;
+      if (plz == "") {
+        plz = null;
       }
-      if(hausnr==""){
-        hausnr=null;
+      if (hausnr == "") {
+        hausnr = null;
       }
       await Event.create({
         name: req.session.name,
@@ -107,19 +162,6 @@ module.exports = {
     await req.file("image").upload(params, callback);
     return res.redirect("/event");
   },
-  
-  findall:async function(req,res){
-
-      let sql = "SELECT * FROM event" ;
-      var rawResult = await sails.sendNativeQuery(sql);
-      console.dir(rawResult);
-      let events  = [];
-      rawResult.rows.forEach(element => {
-        console.dir(events);
-        events.push(element);
-      });
-      return res.json(events);
-    },
 
   find: async function (req, res) {
     sails.log.debug("List all Events....");
@@ -143,7 +185,9 @@ module.exports = {
 
   findOne: async function (req, res) {
     sails.log.debug("List single event....");
+    console.log(" my ID : " + req.me.id);
     let event = await Event.findOne({ id: req.params.id });
+    console.log(" my ID : " + req.me.id);
     if (req.me.id == event.owner) {
       res.view("pages/event/show_event", { event: event });
     } else {
