@@ -237,7 +237,7 @@
     onlyAllowOrigins: [  
      
       "https://example.com",
-      "https://evently-render.onrender.com",
+      "https://app-evently.onrender.com",
     ],
 
     /***************************************************************************
@@ -345,7 +345,7 @@
    *                                                                         *
    ***************************************************************************/
   custom: {
-    baseUrl: "https://evently-render.onrender.com",
+    baseUrl: "https://app-evently.onrender.com",
 
     // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
     // stripeSecret: 'sk_prod__fake_Nfgh82401348jaDa3lkZ0d9Hm',
