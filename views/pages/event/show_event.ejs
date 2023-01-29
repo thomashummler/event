@@ -1,3 +1,4 @@
+<%- exposeLocalsToBrowser() %>
 <div class="grid-container-show">
   <h2>
     Details zu Ihrem Event
@@ -92,6 +93,7 @@
               <%=event.id %>
             </div>
           </div>
+          
           <div class="row">
             <div class="col-6"><a class="btn btn-primary" href="/event/<%=event.id%>/edit">Bearbeiten</a></div>
             <div class="col-6"><a class="btn btn-primary" href="/event/<%=event.id%>/destroy">Löschen</a></div>
@@ -99,3 +101,4 @@
     </div>
   </div>
 </div>
+<%- exposeLocalsToBrowser() %>

@@ -10,21 +10,17 @@ const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
 
-  showPromotionConfirmation:async function(req,res){
-    let params = req.allParams();
-      let promo = params.promo;
-      let eventId = params.eventId;
-   
-      res.view('pages/event/promotion_confirmation', {
-          eventId: req.param("eventId"), promo : req.param("promo"),
-      })
-    },
-
+  showPromotionConfirmation: async function (req, res) {
+    let params = req.allParams();;
+    res.view('pages/event/promotion_confirmation', {
+      eventId: req.param("eventId"), promo: req.param("promo"),
+    })
+  },
 
   searchCategoryStadt: async function (req, res) {
     let events;
     let params = req.allParams();
-    
+
     if (params.category == "empty") {
       params.category = null;
     }
@@ -74,7 +70,7 @@ module.exports = {
         private: "false",
       });
     }
-
+    console.log(events);
     res.view("pages/event/overview_events", { events: events });
   },
 
@@ -197,9 +193,9 @@ module.exports = {
 
   findOne: async function (req, res) {
     sails.log.debug("List single event....");
-    console.log(" my ID : " + req.me.id);
-    let event = await Event.findOne({ id: req.params.id });
-    console.log(" my ID : " + req.me.id);
+    let params = req.allParams();
+    let event = await Event.findOne({ id: params.eventId });
+
     if (req.me.id == event.owner) {
       res.view("pages/event/show_event", { event: event });
     } else {
@@ -208,6 +204,7 @@ module.exports = {
       });
     }
   },
+
 
   findPromotionPage: async function (req, res) {
     sails.log.debug("finding Promotion Site with Event");
