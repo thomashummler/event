@@ -163,20 +163,6 @@ module.exports = {
     return res.redirect("/event");
   },
 
-  /*
-  findall:async function(req,res){
-      let sql = "SELECT * FROM event" ;
-      var rawResult = await sails.sendNativeQuery(sql);
-      console.dir(rawResult);
-      let events  = [];
-      rawResult.rows.forEach(element => {
-        console.dir(events);
-        events.push(element);
-      });
-      return res.json(events);
-    },
-    */
-
   find: async function (req, res) {
     sails.log.debug("List all Events....");
     let events;
