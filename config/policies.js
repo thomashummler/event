@@ -16,7 +16,8 @@ module.exports.policies = {
     '*': 'is-logged-in',
       'find': true,
       'findOne': true,
-      'findEventsByCategory':true
+      'findEventsByCategory':true,
+      'searchCategoryStadt':true
   },
  
 

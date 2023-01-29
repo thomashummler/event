@@ -199,7 +199,9 @@ module.exports = {
 
   findOne: async function (req, res) {
     sails.log.debug("List single event....");
+    console.log(" my ID : " + req.me.id);
     let event = await Event.findOne({ id: req.params.id });
+    console.log(" my ID : " + req.me.id);
     if (req.me.id == event.owner) {
       res.view("pages/event/show_event", { event: event });
     } else {
