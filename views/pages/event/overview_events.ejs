@@ -1,11 +1,12 @@
 <%- exposeLocalsToBrowser() %>
 <div class="plaincontainer">
-  <h2>Übersicht aller Events</h2>
-  <form action="/events/searchCS" method="get" class="create-form" >
+  <div class="filter">
+    <h2>Übersicht aller Events</h2>
+  <form action="/events/searchCS" method="get" class="create-form-overview" >
     <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-        <label for="category"> <b>Wähle eine Kategorie für dein Event aus:</b></label>
+        <label for="category"> <b>Filtere die Events nach Kategorie oder Stadt:</b></label>
         <select type="text" name="category">
-          <option value="empty">Choose No Category</option>
+          <option value="empty">Wähle eine Kategorie</option>
             <option value="Sport">Sport</option>
             <option value="Musik">Musik</option>
             <option value="Kultur">Kultur</option>
