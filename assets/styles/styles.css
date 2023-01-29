@@ -65,6 +65,7 @@ body {
   font-size: 16px;
   padding-bottom: 20px;
   color: var(--dark-color);
+  height: 900px;
 }
 
 
@@ -414,7 +415,7 @@ header {
   padding-bottom: 20px;
   font-size: larger;
   font-weight: bold;
-  color: var(--white-color);
+  color: var(--dark-color);
 }
 
 .overviewOwnName {
@@ -474,8 +475,27 @@ header {
 }
 
 
+/************ FILTER **************/
 
+.filter {
+  padding-left: 20px;
+}
 
+.create-form-overview {
+  max-height: 40px;
+}
+
+.create-form-overview button {
+  height: 40px;
+}
+
+.create-form-overview select {
+  height: 40px;
+}
+
+.create-form-overview input {
+  height: 40px;
+}
 
 /************ SEARCHBAR **********/
 
@@ -1123,6 +1143,15 @@ option:checked {
   width: 100%;
   }
 
+
+  #promote-stepone button{
+    width: 400px;
+    }
+
+    #promote-stepone a {
+      color: var(--white-color);
+      }
+
   #promote a {
     color: var(--white-color);
     }
@@ -1245,6 +1274,10 @@ footer div:hover {
         aspect-ratio: 2/3;
     }
 
+    .grid-item431 {
+      height: 1100px;
+  }
+
 
     #menu {
       width: 250px;
@@ -1358,7 +1391,6 @@ footer div:hover {
   }
 
   .plaincontainer h2{
-    padding-left: 23px;
     text-align: left;
   }
 
@@ -1419,9 +1451,6 @@ footer div:hover {
     font-size: 24px;
   }
 
-  .plaincontainer h2 {
-    padding-left: 60px;
-  }
 
   .promotion{
     padding-left: 15%;
@@ -1441,6 +1470,10 @@ footer div:hover {
   .grid-container431 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .grid-item431 {
+    height: 900px;
+}
 
 }
 
@@ -1537,9 +1570,6 @@ footer div:hover {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.plaincontainer h2{
-  padding-left: 80px;
-}
 
 #menu {
   width: 350px;
