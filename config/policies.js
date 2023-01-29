@@ -16,7 +16,7 @@ module.exports.policies = {
     '*': 'is-logged-in',
       'find': true,
       'findOne': true,
-      'createWithImage':true,
+      'findEventsByCategory':true
   },
  
 
