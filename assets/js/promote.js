@@ -6,9 +6,9 @@ parasails.registerPage("promote", {
     },
     methods: {
 
-        promote: async function (eventId) {
+        promote: async function (eventId,status) {
             const formData = {
-                promotionStatus: this.Promotion,
+                promotionStatus: status,
                 eventId: eventId,
                 _csrf: window.SAILS_LOCALS._csrf
             }

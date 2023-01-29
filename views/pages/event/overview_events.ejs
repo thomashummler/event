@@ -1,6 +1,21 @@
 <div class="plaincontainer">
   <h2>Übersicht aller Events</h2>
+  <form action="/events/searchCS" method="get" class="create-form" >
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+        <label for="category"> <b>Wähle eine Kategorie für dein Event aus:</b></label>
+        <select type="text" name="category">
+          <option value="empty">Choose No Category</option>
+            <option value="Sport">Sport</option>
+            <option value="Musik">Musik</option>
+            <option value="Kultur">Kultur</option>
+            <option value="Weiteres">Weiteres</option>
+        </select>
+        <input type="text" placeholder="Stadt" name="stadt" minLength="1" maxlength="120" />
+     <button type="submit" class="submit-button">Filtern</button>
+
+
   <div class="grid-container431">
+
     <% events.forEach(function(event){ %>
       <div class="grid-item431">
         <div class="overviewName">
@@ -27,5 +42,6 @@
             </div>
       </div>
       <% }); %>
+
   </div>
 </div>
