@@ -35,6 +35,7 @@ module.exports.routes = {
   'POST /event/:id/update': { controller: 'EventController', action: 'updateOne' },
   'GET /event/:id/destroy': { controller: 'EventController', action: 'destroyOne' },
   'GET /events/searchCS' :{controller: 'EventController', action: 'searchCategoryStadt'},
+  'GET /event/showPromotionConfirmation' :{controller: 'EventController', action: 'showPromotionConfirmation'},
 
 
   'GET /faq': { action: 'view-faq' },

@@ -24,7 +24,6 @@
         Ihre aktuelle Promotionsstufe für dieses Event ist: <%= event.promotionStatus %>
       </div>
       <br />
-
       <div id="promote">
         <div class="promotion_option_container">
           <div class="promotion_option">
@@ -32,24 +31,39 @@
               <h3>Promotionsstufe 1</h3>
               <p>Ihr Event wird in seiner Kategorie ganz oben angezeigt.</p>
             </div>
-            <button type="submit" class="promote-button"  @click="promote(<%= event.id %>,1)"> <a
-                href="/event/own_events">Jetzt Promotions-Level 1 auswählen</a></button>
+            <form action="/event/showPromotionConfirmation" method="get">
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+              <input type="hidden" value="1" name="promo" />
+              <input type="hidden" value="<%= event.id %>" name="eventId" />
+              <button type="submit" class="promote-button"> Jetzt Promotions-Level 1
+                auswählen</button>
+            </form>
           </div>
           <div class="promotion_option">
             <div class="promotion_option_text">
               <h3>Promotionsstufe 2</h3>
               <p>Ihr Event wird in seiner Kategorie und für seine Stadt ganz oben angezeigt.</p>
             </div>
-            <button type="submit" class="promote-button"  @click="promote(<%= event.id %>,2)"> <a
-                href="/event/own_events">Jetzt Promotions-Level 2 auswählen</a></button>
+            <form action="/event/showPromotionConfirmation" method="get">
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+              <input type="hidden" value="2" name="promo" />
+              <input type="hidden" value="<%= event.id %>" name="eventId" />
+              <button type="submit" class="promote-button"> Jetzt Promotions-Level 2
+                auswählen</button>
+            </form>
           </div>
           <div class="promotion_option">
             <div class="promotion_option_text">
               <h3>Promotionsstufe 3</h3>
               <p>Ihr Event wird auf der Gesamtübersicht aller Events ganz oben angezeigt.</p>
             </div>
-            <button type="submit" class="promote-button"  @click="promote(<%= event.id %>,3)"> <a
-                href="/event/own_events">Jetzt Promotions-Level 3 auswählen</a></button>
+            <form action="/event/showPromotionConfirmation" method="get">
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+              <input type="hidden" value="3" name="promo" />
+              <input type="hidden" value="<%= event.id %>" name="eventId" />
+              <button type="submit" class="promote-button"> Jetzt Promotions-Level 3
+                auswählen</button>
+            </form>
           </div>
         </div>
       </div>

@@ -9,6 +9,18 @@ const redactPasswords = require("sails-mysql/lib/private/redact-passwords");
 const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
+
+  showPromotionConfirmation:async function(req,res){
+    let params = req.allParams();
+      let promo = params.promo;
+      let eventId = params.eventId;
+   
+      res.view('pages/event/promotion_confirmation', {
+          eventId: req.param("eventId"), promo : req.param("promo"),
+      })
+    },
+
+
   searchCategoryStadt: async function (req, res) {
     let events;
     let params = req.allParams();
