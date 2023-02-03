@@ -38,10 +38,7 @@
             <% if(req.me) { %>
             <div class="overviewButtons">
               <form class="overviewForm" action="/event/<%=event.id%>">
-                <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
-                <input type ="hidden"value="<%=event.id%>" name="eventId" />
-                <input class="overviewButton" type="submit" value="Details" name="detail" />
-              </form>
+
             </div>
             <% }; %>
       </div>
