@@ -1,6 +1,7 @@
 <%- exposeLocalsToBrowser() %>
     <div class="grid-container-show">
 
+      <div id="promote">
         <div id="promote-stepone">
             <h3>Möchten sie wirklich das Event auf diese Promotionsstufe <%= promo%> setzen?</h3>
             <p>
@@ -16,5 +17,6 @@
                 <button type="submit" class="promote-button" ><a href="/event/promote/<%= eventId %>">Vorgang abbrechen</button> </a>
             </p>
         </div>
-    </div>
+     </div>
+   </div>
     <%- exposeLocalsToBrowser() %>
